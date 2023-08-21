@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Create a Pet</h1>
+    <form onsubmit="getPetData(event)">
+      <input type="text" placeholder="pet name" id="petName" />
+      <input type="text" placeholder="owner name" id="ownerName" />
+      <input type="text" placeholder="species" id="species" />
+      <input type="text" placeholder="breed" id="breed" />
+      <button type="submit">create</button>
+    </form>
+    <ul id="petList"></ul>
+    <script src="script.js"></script>
+  </body>
+</html>
