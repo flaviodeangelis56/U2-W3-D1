@@ -20,18 +20,18 @@ console.log(utente1);
 console.log(utente2);
 utente1.ageComparison(utente1.age, utente2.age);
 
-class pet {
+class Pet {
   constructor(petName, ownerName, species, breed) {
     this.petName = petName;
     this.ownerName = ownerName;
     this.species = species;
     this.breed = breed;
   }
-  ownerNameComparison(x, y) {
-    if (x === y) {
-      console.log(true);
+  ownerNameComparison(pet) {
+    if (this.ownerName === pet.ownerName) {
+      return true;
     } else {
-      console.log(false);
+      return false;
     }
   }
 }
@@ -43,7 +43,8 @@ const getPetData = function (event) {
   const userOwnerName = document.getElementById("ownerName").value;
   const userSpecies = document.getElementById("species").value;
   const userBreed = document.getElementById("breed").value;
-  const userPet = new pet(userPetName, userOwnerName, userSpecies, userBreed);
+  const userPet = new Pet(userPetName, userOwnerName, userSpecies, userBreed);
+  console.log(userPet.ownerNameComparison(userPet.ownerName));
   console.log(userPet);
   petArrey.push(userPet);
   const ul = document.getElementById("petList");
@@ -60,5 +61,6 @@ const getPetData = function (event) {
   ul.appendChild(liBreed);
   liBreed.innerText = userBreed;
   console.log(petArrey);
+  return userPet;
 };
 // getPetData().ownerNameComparison(getPetData().ownerName, getPetData().ownerName);
